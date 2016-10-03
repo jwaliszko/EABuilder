@@ -16,14 +16,12 @@ namespace SampleOne
         [AssertThat("Level == Score.High")]
         public Score Level { get; set; }
 
-        [RequiredIf("GoAbroad == true")]
         [AssertThat("IsDigitChain(passportNumber)")]
         public string PassportNumber { get; set; }
 
         [RequiredIf("GoAbroad = true")]
-        [AssertThat("ReturnDate >= Today('asd')")]
         [AssertThat("ReturnDate >= Today() + WeekPeriod")]
-        [AssertThat("ReturnDate < AddYears(Today(), 1)")]
+        [AssertThat("ReturnDate < AddYears(Today(), 1, 2)")]
         public DateTime? ReturnDate { get; set; }
 
         public DateTime AddYears(DateTime from, int years)
